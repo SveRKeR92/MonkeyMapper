@@ -1,0 +1,19 @@
+{
+  "name": "monkeymapper",
+  "version": "1.0.0",
+  "description": "A package to automatically map your api responses based on your data models",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SveRKeR92/MonkeyMapper.git"
+  },
+  "author": "Sverker92, Wallashing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SveRKeR92/MonkeyMapper/issues"
+  },
+  "homepage": "https://github.com/SveRKeR92/MonkeyMapper#readme"
+}
