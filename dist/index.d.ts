@@ -1,1 +1,1 @@
-declare function helloGuys(): string;
+export declare function helloGuys(): string;

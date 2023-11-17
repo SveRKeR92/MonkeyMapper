@@ -1,5 +1,3 @@
-function helloGuys(): string {
+export function helloGuys(): string {
     return "Hello Guys"
 }
-
-module.exports = helloGuys()
