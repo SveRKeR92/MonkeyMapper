@@ -5,41 +5,35 @@ function helloGuys() {
     return "Hello Guys";
 }
 exports.helloGuys = helloGuys;
-var monkeyMap = function (entity) {
-    var entity_keys = Object.keys(entity);
-    var test = entity;
-    console.log(test);
-    console.log(entity_keys);
-    // if (typeof data === "object"){
-    //     try{
-    //
-    //     }catch (e){
-    //
-    //     }²
-    //
-    // } else {
-    //     console.error("Wrong data type")
-    // }
-};
-exports.monkeyMap = monkeyMap;
-// function test<T>(arg: T): T{
-//     return arg
-// }
-//
-//
 var Person = /** @class */ (function () {
-    function Person(name) {
-        this.name = name;
-        this.name = name;
+    function Person(firstname, lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
     return Person;
 }());
-//
-// function createInstance<T>(classToInstantiate: T): T {
-//     return new classToInstantiate();
-// }
-//
+function createInstance(classToInstantiate) {
+    return new classToInstantiate();
+}
+function monkeyMap(entity, data) {
+    // const known_fields: string[] = ["firstname", "id", "test"]
+    var updated_entity = createInstance(entity);
+    // known_fields.forEach((field: string) => {
+    //     if (field in updated_entity) {
+    //         updated_entity[field] = data[field];
+    //     }})
+    Object.keys(updated_entity).forEach(function (key) {
+        updated_entity[key] = data[key];
+    });
+    console.log(updated_entity);
+    return updated_entity;
+}
+exports.monkeyMap = monkeyMap;
+monkeyMap(Person, { "firstname": "pipi", "lastname": "vert" });
 // const person = createInstance<Person>(Person);
+// const user = createInstance(User)
 // console.log(person.name); // Output: undefined
 //
 //
@@ -59,9 +53,10 @@ let mappedData = User(
     name = "Sverker",
     email = "sverkerlechad@gmail.com"
 )*/
-var create_class_from_name = function (class_name) {
-    return new Function('return new ' + class_name)();
-};
-var person1 = create_class_from_name("Person");
-console.log("Person 1 should be created : ", person1);
-(0, exports.monkeyMap)(Person);
+//
+// const create_class_from_name = (class_name: string): any => {
+//     return new Function('return new ' + class_name)()
+// }
+//
+// const person1 = create_class_from_name("Person")
+// console.log("Person 1 should be created : ", person1)

@@ -2,46 +2,36 @@ export function helloGuys(): string {
     return "Hello Guys"
 }
 
-export function monkeyMap<T> (entity: T, data: object| Array<object>): T {
-    const known_field_array: string[] = ["firstname", "id", "test"]
-    const updated_entity = createInstance(entity)
-    const
-    known_field_array.forEach((field) => {
-        updated_entity[field] = data[field]
-    })
-    const entity_keys = Object.keys(entity)
-    console.log(entity_keys)
-    return entity
-    // if (typeof data === "object"){
-    //     try{
-    //
-    //     }catch (e){
-    //
-    //     }²
-    //
-    // } else {
-    //     console.error("Wrong data type")
-    // }
-}
-
-// function test<T>(arg: T): T{
-//     return arg
-// }
-//
-//
 class Person{
-    constructor(public name: string) {
-        this.name = name
+    constructor(public firstname: string, public lastname: string) {
+        this.firstname = firstname
+        this.lastname = lastname
     }
 }
 
-function createInstance<T>(classToInstantiate: T): T {
+function createInstance<T>(classToInstantiate: new () => T): T {
     return new classToInstantiate();
 }
 
-const person = createInstance<Person>(Person);
-const user = createInstance(User)
-console.log(person.name); // Output: undefined
+export function monkeyMap(entity: any, data: {[key: string]: string | any}){
+    // const known_fields: string[] = ["firstname", "id", "test"]
+    const updated_entity: any = createInstance(entity)
+    // known_fields.forEach((field: string) => {
+    //     if (field in updated_entity) {
+    //         updated_entity[field] = data[field];
+    //     }})
+    Object.keys(updated_entity).forEach(key => {
+        updated_entity[key] = data[key]
+    })
+    console.log(updated_entity)
+    return updated_entity
+}
+
+monkeyMap(Person, {"firstname": "pipi", "lastname": "vert"})
+
+// const person = createInstance<Person>(Person);
+// const user = createInstance(User)
+// console.log(person.name); // Output: undefined
 
 
 //
@@ -66,12 +56,11 @@ let mappedData = User(
     email = "sverkerlechad@gmail.com"
 )*/
 
-monkeyMap(user, {})
-
-const create_class_from_name = (class_name: string): any => {
-    return new Function('return new ' + class_name)()
-}
-
-const person1 = create_class_from_name("Person")
-console.log("Person 1 should be created : ", person1)
+//
+// const create_class_from_name = (class_name: string): any => {
+//     return new Function('return new ' + class_name)()
+// }
+//
+// const person1 = create_class_from_name("Person")
+// console.log("Person 1 should be created : ", person1)
 

@@ -1,2 +1,4 @@
 export declare function helloGuys(): string;
-export declare const monkeyMap: (entity: any) => void;
+export declare function monkeyMap(entity: any, data: {
+    [key: string]: string | any;
+}): any;
