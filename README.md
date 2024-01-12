@@ -1,5 +1,5 @@
 [![npm](https://img.shields.io/npm/dm/monkeymapper)](https://www.npmjs.com/package/monkeymapper)
-![npm](https://img.shields.io/npm/v/monkeymapper)
+[![npm](https://img.shields.io/npm/v/monkeymapper)](https://www.npmjs.com/package/monkeymapper)
 ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/SveRKeR92/MonkeyMapper/build-and-publish.yml)
 
 # MonkeyMapper
