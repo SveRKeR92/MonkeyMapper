@@ -1,6 +1,6 @@
 {
   "name": "monkeymapper",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A package to automatically map your api responses based on your data models",
   "typings": "dist/index.d.ts",
   "main": "dist/index.js",
